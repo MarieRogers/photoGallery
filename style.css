@@ -1,0 +1,159 @@
+body {
+    padding-bottom: 55px;
+}
+h1 {
+    padding: 0;
+    margin: 0;
+    text-align: right;
+}
+img {
+    padding: 3%;
+}
+footer {
+    text-align: center;
+    font-size: 10pt;
+}
+li:hover {opacity: 0.7;}
+#carousel {
+    width: 685px;
+    height: 750px;
+    overflow: hidden;
+}
+#carousel ul {
+    width: 3200px;
+    padding: 0;
+    margin: 0;
+}
+#carousel ul li {
+    width:750px;
+    text-align: center;
+    height: 225px;
+    list-style: none;
+    float:	left;
+}
+#right {
+    float: right;
+    opacity: .5;
+    height: 10%;
+    width: 10%
+}
+#left {
+    float: left;
+    opacity: .5;
+    height: 10%;
+    width: 10%
+}
+#checks {
+    display: flex;
+    margin-left: 8%;
+    margin-top: 3%;
+}
+/*check box styling taken from w3schools checkbox styling tutorial and adjusted*/
+.container {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    font-size: 22px;
+}
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+}
+.container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+.container input:checked ~ .checkmark {
+    background-color: #2196F3;
+}
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+.container input:checked ~ .checkmark:after {
+    display: flex;
+}
+.container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+/*Following CSS code taken from w3schools tutorial on modal images*/
+.myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.myImg:hover {opacity: 0.7;}
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+.caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+.modal-content, #caption { 
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+span.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: white;
+    font-size: 80px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+span.close:hover,
+span.close:focus {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
+}
+
